@@ -6,8 +6,9 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
+(setq user-full-name "Rajkumar Natarajan"
+      user-mail-address "raj.cs.psg@gmail.com")
+(setq doom-font (font-spec :family "Monofurbold Nerd Font Mono" :size 26))
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -19,7 +20,7 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "monospace" :size 14))
+;;(setq doom-font (font-spec :family "monospace" :size 14))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -53,6 +54,13 @@
 ;; they are implemented.
 
 (setq treemacs--width-is-locked nil)
+(setq doom-themes-treemacs-theme "doom-colors")
+(quickrun-add-command "c++/c11"
+                      '((:command . "g++")
+                        (:exec    . ("%c -std=c++20 %o -o %e %s"
+                                     "%e %a"))
+                        (:remove  . ("%e")))
+                      :default "c++")
 
 (use-package! lsp-mode
   :custom
