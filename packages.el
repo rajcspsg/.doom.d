@@ -52,3 +52,4 @@
 (package! company-lsp)
 (package! lsp-haskell)
 (package! haskell-mode)
+(package! quickrun)
